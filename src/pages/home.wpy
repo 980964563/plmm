@@ -21,9 +21,14 @@
           <button class="weui-btn btn_add_course_style" @tap="bindCredit">+ 添加课程</button>
         </view>
       </view>
-      <view class="view_content_style">
-        <view class="padding-top-percent-50 text-align-c">您还未添加课程，<span class="span_text_style">这就去添加</span></view>
-      </view>
+      <swiper class="tab-box" style="height: 800rpx;" current="{{currentTab}}" duration="300" bindchange="switchTab">
+        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7,8]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content" style="margin-left: {{idx > 0 ? '-50rpx':'0rpx'}}">
+          <view class="view_content_style">
+            <!--<view class="padding-top-percent-50 text-align-c">您还未添加课程，<span class="span_text_style">这就去添加</span></view>-->
+                {{tabItem}}
+          </view>
+        </swiper-item>
+      </swiper>
     </view>
 </template>
 
@@ -34,10 +39,25 @@
     config = {
       navigationBarTitleText: '课程'
     };
-    data = {};
+    data = {
+      currentTab: 0,
+      navScrollLeft: 0
+    };
     methods = {};
 
     onLoad() {
+    }
+    switchTab(event){
+      let that = this
+      const cur = event.detail.current;
+      console.log('[home][event][cur=====>]'+cur)
+      // const singleNavWidth = this.data.windowWidth / 5;
+      // console.log('[home][event][singleNavWidth=====>]'+singleNavWidth)
+      that.currentTab = cur
+      console.log('[home][event][currentTab=====>]'+that.currentTab)
+      // that.navScrollLeft = (cur - 2) * singleNavWidth
+      // console.log('[home][event][navScrollLeft=====>]'+that.navScrollLeft)
+      that.$apply()
     }
   }
 </script>

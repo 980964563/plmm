@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a269d2d-8418-4103-8eca-3708c4531688" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/icon_home_course.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/icon_home_course_active.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/icon_home_find.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/icon_home_find_active.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/icon_home_info.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/icon_home_info_active.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/icon_home_message.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/icon_home_message_active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.wepycache" beforeDir="false" afterPath="$PROJECT_DIR$/.wepycache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.wpy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/style.less" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -64,8 +49,12 @@
       <file leaf-file-name="home.wpy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/home.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="24" column="96" lean-forward="true" selection-start-line="24" selection-start-column="96" selection-end-line="24" selection-end-column="96" />
+            <state relative-caret-position="342">
+              <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="20" />
+              <folding>
+                <element signature="n#style#0;n#swiper#0;n#view#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#swiper-item#0;n#swiper#0;n#view#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,6 +110,8 @@
       <find>padding-top</find>
       <find>btn_add_course_style</find>
       <find>text-a</find>
+      <find>switchTab</find>
+      <find>navScrollLeft</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -276,12 +267,12 @@
       <option name="presentableId" value="Default" />
       <updated>1550413609249</updated>
       <workItem from="1550413610371" duration="7544000" />
-      <workItem from="1550471200103" duration="6288000" />
+      <workItem from="1550471200103" duration="8938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13832000" />
+    <option name="totallyTimeSpent" value="16482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,6 +370,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#swiper#0;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#swiper-item#0;n#swiper#0;n#view#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -459,8 +454,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/home.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="24" column="96" lean-forward="true" selection-start-line="24" selection-start-column="96" selection-end-line="24" selection-end-column="96" />
+        <state relative-caret-position="342">
+          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#swiper#0;n#view#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#swiper-item#0;n#swiper#0;n#view#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
