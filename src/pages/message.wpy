@@ -1,0 +1,22 @@
+<template>
+    <view></view>
+</template>
+
+<script>
+  import wepy from 'wepy';
+
+  export default class Message extends wepy.page {
+    config = {
+      navigationBarTitleText: '消息'
+    };
+    data = {};
+    methods = {};
+
+    onLoad() {
+    }
+  }
+</script>
+
+<style lang="less">
+
+</style>

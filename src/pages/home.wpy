@@ -1,0 +1,41 @@
+<template>
+    <view class="home_view_style">
+      <view class="weui-flex padding-20-30">
+        <view class="weui-flex__item text-align-c w50">
+          <view class="cd64a47 fz-32">2019.1.27</view>
+        </view>
+        <view class="weui-flex__item text-align-c w50 style_border_right">
+          <view class="cd64a47">累计学习</view>
+          <view class="fz-20"><span class="fz-40">2</span>天</view>
+        </view>
+        <view class="weui-flex__item text-align-c w50">
+          <view class="cd64a47">累计学习</view>
+          <view class="fz-20 fz-32"><span class="fz-40">2</span>天</view>
+        </view>
+      </view>
+    </view>
+</template>
+
+<script>
+  import wepy from 'wepy';
+
+  export default class Home extends wepy.page {
+    config = {
+      navigationBarTitleText: '课程'
+    };
+    data = {};
+    methods = {};
+
+    onLoad() {
+    }
+  }
+</script>
+
+<style lang="less">
+  .home_view_style{
+    .style_border_right{
+      border-right: #dedede 1rpx solid;
+    }
+  }
+
+</style>
