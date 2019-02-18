@@ -13,6 +13,17 @@
           <view class="fz-20 fz-32"><span class="fz-40">2</span>天</view>
         </view>
       </view>
+      <view class="weui-flex padding-20-30">
+        <view class="weui-flex__item text-align-c w50">
+          <view class="cd64a47">我的课程</view>
+        </view>
+        <view class="weui-flex__item text-align-c w50">
+          <button class="weui-btn btn_add_course_style" @tap="bindCredit">+ 添加课程</button>
+        </view>
+      </view>
+      <view class="view_content_style">
+        <view class="padding-top-percent-50 text-align-c">您还未添加课程，<span class="span_text_style">这就去添加</span></view>
+      </view>
     </view>
 </template>
 
@@ -36,6 +47,36 @@
     .style_border_right{
       border-right: #dedede 1rpx solid;
     }
+  }
+  .btn_add_course_style{
+    width: 70%;
+    height: 68rpx;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 55rpx;
+    /*background-color: #FFEE28;*/
+    background: linear-gradient(to right, #FFD33E, #FFEE28);
+    color: #2F2C38;
+    font-size:30rpx;
+    -webkit-box-shadow:0 0 10px rgba(209, 209, 209, .5);
+    -moz-box-shadow:0 0 10px rgba(209, 209, 209, .5);
+    box-shadow:0 0 10px rgba(209, 209, 209, .5);
+  }
+  .btn_add_course_style::after {
+    border: 0;
+  }
+  .view_content_style{
+    margin: 5%;
+    height: 750rpx;
+    border-radius: 10px;
+    background: #FFFFFF;
+    -webkit-box-shadow:0 0 10px rgba(209, 209, 209, .5);
+    -moz-box-shadow:0 0 10px rgba(209, 209, 209, .5);
+    box-shadow:0 0 10px rgba(209, 209, 209, .5);
+  }
+  .span_text_style{
+    color: #FE4070;
+    text-decoration:underline;
   }
 
 </style>
