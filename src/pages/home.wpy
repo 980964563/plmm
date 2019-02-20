@@ -6,11 +6,11 @@
         </view>
         <view class="weui-flex__item text-align-c w50 style_border_right">
           <view class="cd64a47">累计学习</view>
-          <view class="fz-20"><span class="fz-40">2</span>天</view>
+          <view class="fz-20"><span class="fz-40 font-weight-bold">2</span>天</view>
         </view>
         <view class="weui-flex__item text-align-c w50">
           <view class="cd64a47">累计学习</view>
-          <view class="fz-20 fz-32"><span class="fz-40">2</span>天</view>
+          <view class="fz-20 fz-32"><span class="fz-40 font-weight-bold">2</span>天</view>
         </view>
       </view>
       <view class="weui-flex padding-20-30">
@@ -21,10 +21,16 @@
           <button class="weui-btn btn_add_course_style" @tap="bindCredit">+ 添加课程</button>
         </view>
       </view>
-      <swiper class="tab-box" style="height: 800rpx;" current="{{currentTab}}" duration="300" bindchange="switchTab">
-        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7,8]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content" style="margin-left: {{idx > 0 ? '-50rpx':'0rpx'}}">
+      <swiper class="tab-box" style="height: 800rpx;" previous-margin="50rpx" next-margin="50rpx" current="{{currentTab}}" duration="300" bindchange="switchTab">
+        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7,8]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
           <view class="view_content_style">
             <!--<view class="padding-top-percent-50 text-align-c">您还未添加课程，<span class="span_text_style">这就去添加</span></view>-->
+            <view class="padding-top-60 text-align-c">
+              <image class="img_course_style" src="../images/img_chahua.jpg"></image>
+              <view class="fz-40 font-weight-bold">一拳的插画师</view>
+              <view class="font-weight-bold">作者：一拳</view>
+              <view>时长：30：18</view>
+            </view>
                 {{tabItem}}
           </view>
         </swiper-item>
@@ -97,6 +103,11 @@
   .span_text_style{
     color: #FE4070;
     text-decoration:underline;
+  }
+  .img_course_style{
+    width: 208rpx;
+    height: 310rpx;
+    border-radius:10rpx;
   }
 
 </style>

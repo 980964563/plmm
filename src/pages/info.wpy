@@ -1,5 +1,48 @@
 <template>
-    <view></view>
+  <view style="width: 100%;">
+    <view class="header">
+      <view class="header_content">
+        <image class="avatarUrl" src="{{avatarUrl}}"></image>
+        <view class="nickName cfff">L。</view>
+        <view class="nickName cfff" wx:if="{{!bShowBind}}">15010779296</view>
+        <view class="weui-cell__ft" wx:if="{{bShowBind}}">
+          <button class="nickName cfff" style="background-color:transparent;" hover-class="none" open-type="getPhoneNumber" @getphonenumber="bindGetPhoneNumber">点击绑定微信手机号</button>
+        </view>
+      </view>
+    </view>
+    <view class="info_block margin-top-percent-5" >
+      <navigator class="item" style="border: none;" wx:if="{{!storeIfExist}}">
+        <view class="item_content">
+          <image class="item_img" src="../images/icon_info_wallet.png"></image>
+          <view class="text">我的钱包</view>
+        </view>
+        <view class="arrow"><image src="../images/icon_right.png" class="icon-right-class"></image></view>
+      </navigator>
+      <view class="item" style="border: none;" wx:if="{{!storeIfExist}}" @tap="myStore">
+        <view class="item_content">
+          <image class="item_img" src="../images/icon_info_order.png"></image>
+          <view class="text">我的订单</view>
+        </view>
+        <view class="arrow"><image src="../images/icon_right.png" class="icon-right-class"></image></view>
+      </view>
+      <view class="item" style="border: none;" wx:if="{{!storeIfExist}}" @tap="myStore">
+        <view class="item_content">
+          <image class="item_img" src="../images/icon_info_publishcourse.png"></image>
+          <view class="text">发布课程</view>
+        </view>
+        <view class="arrow"><image src="../images/icon_right.png" class="icon-right-class"></image></view>
+      </view>
+    </view>
+    <view class="info_block margin-top-percent-5" >
+      <view class="item" style="border: none;" wx:if="{{!storeIfExist}}" @tap="myStore">
+        <view class="item_content">
+          <image class="item_img" src="../images/icon_info_settings.png"></image>
+          <view class="text">设置</view>
+        </view>
+        <view class="arrow"><image src="../images/icon_right.png" class="icon-right-class"></image></view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
@@ -9,14 +52,77 @@
     config = {
       navigationBarTitleText: '我的'
     };
-    data = {};
+    data = {
+      bShowBind:false,
+      storeIfExist: false,
+      avatarUrl: null,
+      userInfo:{}
+    };
     methods = {};
 
-    onLoad() {
+    async onLoad() {
+      await wepy.login();
+      this.userInfo = await wepy.getUserInfo();
+      console.log('[info][onLoad][userInfo=====>][%s]',JSON.stringify(this.userInfo))
     }
   }
 </script>
 
 <style lang="less">
+  .header {
+    background-image: url("https://ishanguang.sh1a.qingstor.com/mp-img/image/bg_info.jpg");
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    height: 350rpx;
+  }
 
+  .header_content {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 48rpx;
+  }
+
+  .avatarUrl {
+    width: 122rpx;
+    height: 122rpx;
+    border-radius: 1000px;
+  }
+  .info_block {
+    background: #fff;
+    .item {
+      margin-left: 5%;
+      border-top: 1rpx solid #dedede;
+      padding: 34rpx 28rpx 34rpx 0rpx;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .item:last-child {
+      /*border-bottom: 1rpx solid #dbdbdb;*/
+    }
+    .item_content {
+      display: flex;
+      align-items: center;
+      .text {
+        margin-left: 20rpx;
+        color: #1a1a1a;
+      }
+    }
+    .item_img {
+      width: 42rpx;
+      height: 42rpx;
+    }
+    .arrow {
+      color: #cccccc;
+      font-size: 32rpx;
+    }
+    .tip {
+      color: #999;
+      font-size: 24rpx;
+      margin-top: 20rpx;
+      margin-left: 60rpx;
+    }
+  }
 </style>
