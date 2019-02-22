@@ -3,10 +3,24 @@
     <view class="header">
       <view class="header_content">
         <image class="avatarUrl" src="{{avatarUrl}}"></image>
-        <view class="nickName cfff">L。</view>
-        <view class="nickName cfff" wx:if="{{!bShowBind}}">15010779296</view>
+        <view class="nickName">L。</view>
+        <view class="nickName" style="color: #C1C0C9;" wx:if="{{!bShowBind}}">15010779296</view>
         <view class="weui-cell__ft" wx:if="{{bShowBind}}">
-          <button class="nickName cfff" style="background-color:transparent;" hover-class="none" open-type="getPhoneNumber" @getphonenumber="bindGetPhoneNumber">点击绑定微信手机号</button>
+          <button class="nickName" style="background-color:transparent;" hover-class="none" open-type="getPhoneNumber" @getphonenumber="bindGetPhoneNumber">点击绑定微信手机号</button>
+        </view>
+        <view class="weui-flex padding-20-30">
+          <view class="weui-flex__item text-align-c w50">
+            <view class="black-text fz-32">218</view>
+            <view class="fz-20" style="color: #C1BFCA;">学习时常</view>
+          </view>
+          <view class="weui-flex__item text-align-c w50 style_border_right">
+            <view class="black-text">99</view>
+            <view class="fz-20" style="color: #C1BFCA;">订单</view>
+          </view>
+          <view class="weui-flex__item text-align-c w50">
+            <view class="black-text">96</view>
+            <view class="fz-20" style="color: #C1BFCA;">好友</view>
+          </view>
         </view>
       </view>
     </view>
@@ -55,7 +69,7 @@
     data = {
       bShowBind:false,
       storeIfExist: false,
-      avatarUrl: null,
+      avatarUrl: '../images/Wechat_lily.jpeg',
       userInfo:{}
     };
     methods = {};
@@ -70,11 +84,8 @@
 
 <style lang="less">
   .header {
-    background-image: url("https://ishanguang.sh1a.qingstor.com/mp-img/image/bg_info.jpg");
-    background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    height: 350rpx;
+    background-color: white;
+    height: 400rpx;
   }
 
   .header_content {

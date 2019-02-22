@@ -223,6 +223,7 @@
   <component name="PropertiesComponent">
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -252,7 +253,11 @@
     </option>
   </component>
   <component name="RunManager" selected="npm.build">
+<<<<<<< Updated upstream
     <configuration name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+>>>>>>> Stashed changes
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>

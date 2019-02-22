@@ -1,5 +1,48 @@
 <template>
-    <view></view>
+  <view>
+    <view wx:if="{{titleList.length > 0}}">
+      <view class="scroll_box">
+        <scroll-view class="scroll-view_x" scroll-x style="width: auto;overflow:hidden;">
+          <view class="item_list" wx:for="{{titleList}}" wx:key="{{index}}">
+            <image src="{{item.friendAvatarUrl}}" class="avatarUrl round-border-radius" mode="aspectFill"></image>
+            <view class="item_book_text">{{item.friendName}}</view>
+          </view>
+
+        </scroll-view>
+      </view>
+      <!--<swiper class="tab-box" style="height: 200rpx;" bindchange="switchTab">-->
+        <!--<swiper-item wx:for="{{titleList}}" wx:for-item="item" wx:for-index="idx" wx:key="idx" class="tab-content">-->
+          <!--<view class="view_content_style">-->
+            <!--<image class="avatarUrl round-border-radius" src="{{item.friendAvatarUrl}}"></image>-->
+            <!--<view>{{item.friendName}}</view>-->
+          <!--</view>-->
+        <!--</swiper-item>-->
+      <!--</swiper>-->
+    </view>
+    <view wx:if="{{contactList.length > 0}}" class="message-sec margin-top-20">
+      <view class="child position_relative" wx:for="{{contactList}}" wx:key="{{index}}" wx:if="{{contactList.length > 0}}" bindtap='linkChat'
+            data-id="{{item.friendId}}">
+        <image class="position_absolute round-border-radius" wx:if="{{item.friendAvatarUrl === ''}}" src="https://dafenqi.pek3b.qingstor.com/mp-img/static/headimage.jpg"></image>
+        <image class="position_absolute round-border-radius" wx:if="{{item.friendAvatarUrl !== ''}}" src="{{item.friendAvatarUrl}}"></image>
+        <em class="position_absolute" >{{item.friendName}}</em>
+        <view class="content">
+          <view class="flex">
+            <view class="flex100-5 text-align-r">{{item.msgTime}}</view>
+          </view>
+          <view class="text ellipsis" wx:if="{{item.unreadMsgCount === 0}}">{{item.msg}}</view>
+          <view class="text ellipsis" wx:if="{{item.unreadMsgCount > 0}}">[{{item.unreadMsgCount}}条] {{item.msg}}</view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="text-align-c margin-top-percent-25">
+        <view>
+          <image src='../images/icon_empty_copy_application.png' class="flex-item fleximage"></image>
+        </view>
+        <view><text style="font-size: 25rpx;color: #AAAAAA;">暂时还没有消息噢！</text></view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
@@ -9,7 +52,52 @@
     config = {
       navigationBarTitleText: '消息'
     };
-    data = {};
+    data = {
+      titleList:[{
+        friendAvatarUrl : '../images/icon_message_jia.png',
+        friendName: '添加社团'
+      },{
+        friendAvatarUrl : '../images/Wechat_lily.jpeg',
+        friendName: '古典吉他'
+      },
+        {
+          friendAvatarUrl : '../images/Wechat_lily.jpeg',
+          friendName: '插画社'
+        },
+        {
+          friendAvatarUrl : '../images/Wechat_lily.jpeg',
+          friendName: '古风社'
+        },
+        {
+          friendAvatarUrl : '../images/Wechat_lily.jpeg',
+          friendName: '吉他社'
+        },
+        {
+          friendAvatarUrl : '../images/Wechat_lily.jpeg',
+          friendName: '钢琴社'
+        }],
+      contactList:[{
+        friendAvatarUrl : '../images/Wechat_lily.jpeg',
+        friendName: '小艺',
+        msgTime: '6月25日 15：22',
+        msg: '深夜送福利了',
+        unreadMsgCount: 0
+      },
+        {
+          friendAvatarUrl : '../images/Wechat_lily.jpeg',
+          friendName: '通知君',
+          msgTime: '6月25日 15：22',
+          msg: '帅给你的相册点赞了',
+          unreadMsgCount: 1
+        },
+        {
+          friendAvatarUrl : '../images/Wechat_lily.jpeg',
+          friendName: '新的朋友',
+          msgTime: '6月25日 15：22',
+          msg: '奔跑的犀牛给你点赞了',
+          unreadMsgCount: 2
+        }]
+    };
     methods = {};
 
     onLoad() {
@@ -18,5 +106,97 @@
 </script>
 
 <style lang="less">
+  .message-sec {
+    width: 96%;
+    height: auto;
+    padding-left: 4%;
+    display: block;
+    background: white;
+    border-bottom: 1rpx solid #ededed;
+  }
+  .message-sec .child {
+    width: 100%;
+    height: 90rpx;
+    padding: 25rpx 0rpx;
+  }
+  .message-sec .child image {
+    width: 90rpx;
+    height: 90rpx;
+    display: block;
+    left: 0rpx;
+  }
 
+  .message-sec .child em {
+    top:25rpx;
+    left:105rpx;
+    right: inherit;
+  }
+
+  .message-sec .child .content {
+    height: 90rpx;
+    margin-left: 110rpx;
+    padding: 0rpx 4% 15rpx 0rpx;
+    border-bottom: 1rpx solid #ededed;
+  }
+
+  .message-sec .child .content .flex {
+    margin: 10rpx 0rpx 5rpx 0rpx;
+  }
+
+  .message-sec .child .content .flex .flex100-5 {
+    font-size: 28rpx;
+    color: #303030;
+  }
+
+  .message-sec .child .content .flex .tr {
+    color: #6a6a6a;
+  }
+
+  .message-sec .child .content .text {
+    font-size: 24rpx;
+    color: #989898;
+  }
+
+  .flex100-5 {
+    flex: 0 0 98%;
+    box-sizing: border-box;
+  }
+
+  .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  view,button {
+    display: block;
+    overflow: initial;
+  }
+  .view_content_style {
+    height: 150rpx;
+    background: #FFFFFF;
+  }
+  .avatarUrl {
+    width: 90rpx;
+    height: 90rpx;
+  }
+  .scroll_box{
+    width: 100%;
+    height: 150rpx;
+    overflow: hidden;
+    padding: 20rpx;
+    background: #fff;
+    white-space: nowrap;
+  }
+  .item_list{
+    width: 160rpx;
+    height: auto;
+    margin-right: 23rpx;
+    display: inline-block;
+  }
 </style>
